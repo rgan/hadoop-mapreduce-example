@@ -1,0 +1,14 @@
+Download Hadoop MapReduce from http://hadoop.apache.org/mapreduce/releases.html into directory <HADOOP_HOME>
+Checkout this project from github.
+The input directory contains files with data in format: <college_acronym>;<facebook_college_page_url>
+
+Run mvn package to create the jar:
+$>mvn package
+
+To run standalone:
+$><HADOOP_HOME>/bin/hadoop jar target/facebookBuzzCount-1.0-SNAPSHOT.jar com.thoughtworks.FacebookBuzzCount input output
+
+With the given input, the output directory should contain total counts for each college:
+$>cat output/*
+bc	39562
+clemson	73383
